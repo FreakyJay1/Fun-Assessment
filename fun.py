@@ -25,8 +25,17 @@ def fizzbuzz(num):
     """
 
     #enter your code here
-
+    while num != 0:
+        if num % 3 == 0:
+            print("Fizz")
+        elif num % 5 == 1:
+            print("Buzz")
+        elif (num % 3) == 0 and (num % 5) == 0:
+            print("FizzBuzz")
+        else:
+            print(num)
     
+# fizzbuzz(15)
 
 def word_lengths(sentence):
     """
@@ -41,6 +50,21 @@ def word_lengths(sentence):
     """
     
     #enter your code here
+    # print(type(sentence))
+    if type(sentence) == int:
+        return ValueError
+    else:
+        words = {}
+        word = sentence.split()
+        for i in word:
+            words[i] = len(i)
+            
+        print(words)
+    
+
+word_lengths(123)
+
+
 
 def cube_sum(number):
     """
