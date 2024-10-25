@@ -1,4 +1,4 @@
-def dog_years():
+def dog_years(human):
     
     """
     Create a program that counts a dog's age in dog's years. The program should only calculate dog years until 20 human years.
@@ -12,6 +12,14 @@ def dog_years():
     """
 
     #enter your code here
+    dog = 0
+    for j in range(1,human + 1):
+        if j == 1 or j == 2:
+            dog += 10.5
+        elif j >= 3:
+            dog += 4
+    return dog
+
 
 def fizzbuzz(num):
     """
@@ -25,17 +33,19 @@ def fizzbuzz(num):
     """
 
     #enter your code here
-    while num != 0:
-        if num % 3 == 0:
-            print("Fizz")
-        elif num % 5 == 1:
-            print("Buzz")
-        elif (num % 3) == 0 and (num % 5) == 0:
-            print("FizzBuzz")
+    count = []
+    for i in range(1,num+1):
+        if (i % 3) == 0 and (i % 5) == 0:
+            count.append("FizzBuzz")
+        elif  i % 3 == 0:
+            count.append("Fizz")
+        elif i % 5 == 0:
+            count.append("Buzz")
         else:
-            print(num)
-    
-# fizzbuzz(15)
+            count.append(str(i))
+    result = " ".join(count)
+    return result
+print(fizzbuzz(15))
 
 def word_lengths(sentence):
     """
@@ -51,18 +61,18 @@ def word_lengths(sentence):
     
     #enter your code here
     # print(type(sentence))
-    if type(sentence) == int:
-        return ValueError
+    if type(sentence) != str:
+        raise ValueError
     else:
         words = {}
         word = sentence.split()
         for i in word:
             words[i] = len(i)
             
-        print(words)
+        return words
     
 
-word_lengths(123)
+print(word_lengths("ChatGPT is amazing"))
 
 
 
