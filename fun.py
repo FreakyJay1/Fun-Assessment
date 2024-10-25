@@ -1,4 +1,4 @@
-def dog_years(human):
+def dog_years():
     
     """
     Create a program that counts a dog's age in dog's years. The program should only calculate dog years until 20 human years.
@@ -12,13 +12,18 @@ def dog_years(human):
     """
 
     #enter your code here
+    human = int(input("Input a dog's age in human years:"))
+    if human > 20:
+        human = int(input("Input a dog's age in human years:"))
     dog = 0
     for j in range(1,human + 1):
         if j == 1 or j == 2:
             dog += 10.5
-        elif j >= 3:
+        else:
             dog += 4
-    return dog
+    
+    result = print(f"The dog's age in dog's years is {round(dog)}")
+    return result
 
 
 def fizzbuzz(num):
